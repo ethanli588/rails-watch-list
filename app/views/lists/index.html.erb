@@ -1,9 +1,23 @@
-<h1>All the Lists</h1>
+<div class="container">
 
-<ul>
-  <% @lists.each do |list| %>
-    <li> <%= link_to list.name, list_path(list) %></li>
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.7),rgba(0,0,0,0.4)), url(../../assets/1.jpeg);">
+  <div class="container">
+    <h1>Checkout All Kinds of Moives Here!</h1>
+    <p>Good movie, happy hours.</p>
+  </div>
+</div>
+
+<h1>My List</h1>
+
+<div class="row">
+  <% @lists.each_with_index do |list, index| %>
+    <div class="card-category col-sm-4 m-2" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.5), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
+      <%= link_to list.name, list_path(list) %>
+    </div>
   <% end %>
-</ul>
+</div>
 
 <%= link_to "Create a new List", new_list_path %>
+
+
+</div>
